@@ -6,6 +6,7 @@
 #include <cassert>
 #include <string>
 #include <utility>
+#include <cmath>
 
 using namespace std;
 
@@ -32,7 +33,23 @@ public:
 	}
 	// default constructor does nothing. 
 	Square(){}
+	pair<int,int> jumpPossible(Square& oth){
+		int a = oth.row - row;
+		int b = (oth.col ==  col);
+		int c =  oth.col - col;
+		int d = (oth.row == row);
+		if (b && a == 1)
+			return make_pair(1, 1);
+		if (b && a == -1)
+			return make_pair(1,-1);
+		if (d && c == 1)
+			return make_pair(-1,1);
+		if (d && c == -1)
+			return make_pair(-1,-1);
 
+		return make_pair(0,0);
+
+	}
 	vector<Square> neighbors(int r) const{
 		vector<Square> neighbors;
 		for (int d = -r; d < r+1; d++){

@@ -11,16 +11,19 @@
 
 using namespace std;
 
+
+typedef pair<char, pair<int, int> >   move;
+
 typedef unordered_map<Square ,set<Square> , SquareHasher> Graph;
 
 class GameState{
 private:
 	static const int BOARD_SIZE = 9;
-	int numWallsA, numWallsB;
+	int numWallsA, numWallsB; 
 	Square player1, player2;
 	int turn;
 	Graph boardGraph;
-	set<Wall> walls;
+	set<Wall> walls; // on the board
 
 	void addEdge(Square a, Square b){
 		boardGraph[a].insert(b);
@@ -34,7 +37,10 @@ private:
 		return numWallsB;
 	}
 
+
+
 	bool isValidWallPlacement(Wall wall);
+
 public:
 	GameState(): player1("e1"), player2("e9"), numWallsA(10), numWallsB(10), turn(0){
 		for (int i = 0; i < BOARD_SIZE; i++){
@@ -55,11 +61,16 @@ public:
 	}
 	// add squares a and b to each other's adjacency lists
 
+	set<move> validMoves();
+	GameState action(move);
+
 	int currentPlayer(){ return turn; }  // 0 if player 1, 1 if player 2
+	int otherPlayer() {return !turn;}
+	int otherPlayerPosition() {return currentPlayer() == 0? player2: player1;}
 	
 	Square currentPlayerPosition(){ return currentPlayer() == 0 ? player1: player2; }
 	
-	bool terminal() { return player1.row == 0 || player2.row == 8; }  // test for terminal state
+	bool terminal() { return player1.row == 8 || player2.row == 0; }  // test for terminal state
 
 	
 	bool hasPathtoGoal(){

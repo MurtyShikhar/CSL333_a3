@@ -1,0 +1,1185 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fi",
+				"first"
+			],
+			[
+				"cur",
+				"curr"
+			],
+			[
+				"beg",
+				"begin"
+			],
+			[
+				"wall",
+				"walls"
+			],
+			[
+				"wal",
+				"walls"
+			],
+			[
+				"othe",
+				"otherPlayerPosition"
+			],
+			[
+				"oth",
+				"otherPlayerPosition"
+			],
+			[
+				"ot",
+				"otherPlayerPosition"
+			],
+			[
+				"other",
+				"otherPlayer"
+			],
+			[
+				"cu",
+				"currentPlayer"
+			],
+			[
+				"pla",
+				"player1"
+			],
+			[
+				"ma",
+				"make_pair"
+			],
+			[
+				"ju",
+				"jumpPossible"
+			],
+			[
+				"re",
+				"removeEdge"
+			],
+			[
+				"M",
+				"move"
+			],
+			[
+				"Ga",
+				"GameState"
+			],
+			[
+				"m",
+				"move"
+			],
+			[
+				"ic",
+				"include"
+			],
+			[
+				"has",
+				"hasPathtoGoal"
+			],
+			[
+				"num",
+				"numWallsB"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"add",
+				"addEdge"
+			],
+			[
+				"cr",
+				"crossingNeigbor3"
+			],
+			[
+				"cor",
+				"crossingNeigbor1"
+			],
+			[
+				"wll",
+				"walls"
+			],
+			[
+				"co",
+				"coords"
+			],
+			[
+				"o",
+				"orientation"
+			],
+			[
+				"nm",
+				"numWallsB"
+			],
+			[
+				"is",
+				"isValidWallPlacement"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"en",
+				"enqueue"
+			],
+			[
+				"bo",
+				"boardGraph"
+			],
+			[
+				"h",
+				"SquareHasher"
+			],
+			[
+				"pl",
+				"player2"
+			],
+			[
+				"Sq",
+				"Square"
+			],
+			[
+				"Bo",
+				"BOARD_SIZE"
+			],
+			[
+				"nu",
+				"numWallsB"
+			],
+			[
+				"pa",
+				"player2"
+			],
+			[
+				"Inc",
+				"include"
+			],
+			[
+				"p",
+				"push_back"
+			],
+			[
+				"rig",
+				"right"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"dele",
+				"deleted_node"
+			],
+			[
+				"del",
+				"deleted"
+			],
+			[
+				"inse",
+				"insert_balance"
+			],
+			[
+				"ba",
+				"balance"
+			],
+			[
+				"do",
+				"double_rotate"
+			],
+			[
+				"bal",
+				"balance"
+			],
+			[
+				"f",
+				"frequency"
+			],
+			[
+				"rt",
+				"return"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"left",
+				"left_rotate"
+			],
+			[
+				"right",
+				"right_rotate"
+			],
+			[
+				"rest",
+				"reset"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"val",
+				"Value"
+			],
+			[
+				"se",
+				"sendFilename"
+			],
+			[
+				"reA",
+				"readCommand"
+			],
+			[
+				"rea",
+				"readCommandFromServer"
+			],
+			[
+				"sh",
+				"shareData"
+			],
+			[
+				"up",
+				"uploadData"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"WRT",
+				"writeCommand"
+			],
+			[
+				"rad",
+				"readCommandFromServer"
+			],
+			[
+				"po",
+				"poll"
+			],
+			[
+				"poll",
+				"pollfd"
+			],
+			[
+				"read",
+				"readCommandFromServer"
+			],
+			[
+				"ver",
+				"verifyUser"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"write",
+				"writeCommand"
+			],
+			[
+				"Us",
+				"User"
+			],
+			[
+				"stri",
+				"string"
+			],
+			[
+				"d_",
+				"d_type"
+			],
+			[
+				"std",
+				"stdlib"
+			],
+			[
+				"dir",
+				"dirent"
+			],
+			[
+				"bu",
+				"buildSets"
+			],
+			[
+				"def",
+				"define"
+			],
+			[
+				"red",
+				"readCommand"
+			],
+			[
+				"send",
+				"sendUserInfo"
+			],
+			[
+				"writ",
+				"writeCommand"
+			],
+			[
+				"by",
+				"byte_pointer"
+			],
+			[
+				"show",
+				"show_bytes"
+			],
+			[
+				"wr",
+				"writeCommand"
+			],
+			[
+				"we",
+				"writeCommand"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"sst",
+				"sys/stat"
+			],
+			[
+				"fil",
+				"fileName"
+			],
+			[
+				"cl",
+				"client"
+			],
+			[
+				"int",
+				"interrupt"
+			],
+			[
+				"Rec",
+				"ReceiveData"
+			],
+			[
+				"ser",
+				"server"
+			],
+			[
+				"con",
+				"connected"
+			],
+			[
+				"b",
+				"byteswritten"
+			],
+			[
+				"if",
+				"ifstream"
+			],
+			[
+				"ex",
+				"exit"
+			],
+			[
+				"soc",
+				"sockfd"
+			],
+			[
+				"sock",
+				"sockfd"
+			],
+			[
+				"Re",
+				"ReceiveData"
+			],
+			[
+				"Se",
+				"SendData"
+			],
+			[
+				"bf",
+				"buffer"
+			],
+			[
+				"buf",
+				"buffer"
+			],
+			[
+				"Cre",
+				"CreateServer"
+			],
+			[
+				"for",
+				"fork"
+			],
+			[
+				"chi",
+				"childpid"
+			],
+			[
+				"child",
+				"childpid"
+			],
+			[
+				"host",
+				"hostent"
+			],
+			[
+				"new",
+				"newsockfd"
+			],
+			[
+				"port",
+				"portno"
+			],
+			[
+				"das",
+				"dashCoordinates"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"MO",
+				"MoveCost"
+			],
+			[
+				"move",
+				"MoveCost"
+			],
+			[
+				"Da",
+				"dashMoves"
+			],
+			[
+				"init",
+				"initCol"
+			],
+			[
+				"fin",
+				"finalCol"
+			],
+			[
+				"ini",
+				"initCol"
+			],
+			[
+				"cha",
+				"charMap"
+			],
+			[
+				"seq",
+				"sequences"
+			],
+			[
+				"make",
+				"makeMove"
+			],
+			[
+				"da",
+				"dashCoordinates"
+			],
+			[
+				"ds",
+				"dashCoordinates"
+			],
+			[
+				"curr",
+				"currentMoves"
+			],
+			[
+				"delet",
+				"deletePreviousmoves"
+			],
+			[
+				"de",
+				"deltaColumn"
+			],
+			[
+				"delta",
+				"deltaChange"
+			],
+			[
+				"rand",
+				"random_device"
+			],
+			[
+				"ran",
+				"random_device"
+			],
+			[
+				"dash",
+				"dashCoordinates"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Game.cpp",
+			"settings":
+			{
+				"buffer_size": 5550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "AIEngine.h",
+			"settings":
+			{
+				"buffer_size": 1507,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Game.h",
+			"settings":
+			{
+				"buffer_size": 2246,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Square.h",
+			"settings":
+			{
+				"buffer_size": 1795,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n#include <vector>\n#include <set>\n#include <unordered_map>\n#include <stack>\n#include <queue>\n#include <cassert>\n#include <string>\n#include <utility>\n\nusing namespace std;\n\n\n#define VERTICAL 1\n#define HORIZONTAL 0\n\nstruct Wall{\n	int orientation;\n	\n\n	pair<int,int> coords;   // coordinates of the wall\n	/*\n		coords.first is the x coordinate of the wall, and coords.second is the y coordinate of the wall\n		for a horizontal wall the x coordinate ranges from 0 to 7 and the y coordinate ranges from 0 to 7\n		\n		for a horizontal wall to intersect with a vertical wall, their x and y coordinates need to be the same\n	*/\n	Wall(int a, int b,int c) {\n		coords = make_pair(b,c);\n		orientation = a;\n		\n	}\n	Wall(string a)\n	{\n		orientation = a[0] == 'V'? 1 : 0;\n		int xCoord = a[1] - 'a';\n		int yCoord = a[2] - '1';\n		assert (xCoord >= 0 && xCoord <= 7 && yCoord >= 0 && yCoord <= 7); // sanity check\n		coords = make_pair(xCoord, yCoord);\n	}\n\n	/* to support set insertion */\n	bool operator<(const Wall& that) const\n	{\n		if (coords != that.coords)\n			return coords < that.coords;\n		return orientation < that.orientation;\n	}\n\n	bool operator==(const Wall& that) const\n	{\n		return coords == that.coords && orientation == that.orientation;\n	}	\n	\n};",
+			"file": "Wall.h",
+			"file_size": 1229,
+			"file_write_time": 1425898192000000,
+			"settings":
+			{
+				"buffer_size": 1230,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 87.0,
+		"selected_items":
+		[
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"C++",
+				"Set Syntax: C++"
+			],
+			[
+				"jav",
+				"Set Syntax: Java"
+			],
+			[
+				"Set Syntax: C++",
+				"Set Syntax: C++"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ifnde",
+				"Snippet: #ifndef … #define … #endif"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ifnd",
+				"Snippet: #ifndef … #define … #endif"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"i",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"pacak",
+				"Package Control: Disable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Ke",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"dpack",
+				"Package Control: Disable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"INs",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"B",
+				"Preferences: Browse Packages"
+			],
+			[
+				"br",
+				"Preferences: Browse Packages"
+			],
+			[
+				"P",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: SML 'signature' declaration"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/apple/Desktop/Spring-2015/AI/Quoridor/Quaridor.cpp",
+		"/Users/apple/Desktop/Shikhar/WinterBreak-2014/Python/CS-212/AVL-Tree/AVLTree2.java",
+		"/Users/apple/Desktop/Shikhar/WinterBreak-2014/Python/CS-212/AVL-Tree/__init__.py",
+		"/Users/apple/Desktop/Shikhar/WinterBreak-2014/Python/CS-212/AVL-Tree/AVLTree.java",
+		"/Users/apple/Desktop/Spring-2015/hs/simple.c",
+		"/Users/apple/Desktop/Spring-2015/hs/code.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/Code/client.h",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/recurDir.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/dir.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/helloDir.c",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/apple/Desktop/Spring-2015/hs/hello.pl",
+		"/Users/apple/Desktop/Spring-2015/hs/bytes.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/Code/Design Document/Design Document.pdf",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/Code/client.cpp",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/Code/server.cpp",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/Code/server.h",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/server.h",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/newclient.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/newserver.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/sslclient.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/sslserver.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/client.c",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/server.c",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/stack.cpp",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/Dropbox/mycert.pem",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/untitled.cpp",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/helloSSL.cpp",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/helloServer.c",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/Users/apple/Desktop/Spring-2015/COP290/A2/A2",
+		"/Users/apple/Desktop/Spring-2015/AI/a1.cpp",
+		"/Users/apple/Desktop/PQuick.java",
+		"/Users/apple/Desktop/Spring-2015/PQuick.java",
+		"/Users/apple/Desktop/AI",
+		"/Users/apple/Desktop/Spring-2015/AI/main.cpp",
+		"/Users/apple/Desktop/Spring-2015/AI/AI-1/AI-1/Source.cpp",
+		"/Users/apple/Desktop/Spring-2015/AI/holygrail.txt",
+		"/Users/apple/Desktop/Spring-2015/AI/AI-1/AI-1/matchingCost.cpp",
+		"/Users/apple/Desktop/Spring-2015/AI/AI-1/AI-1/matchingCost.h",
+		"/Users/apple/Desktop/Spring-2015/AI/AI-1/AI-1/nonOpt.cpp",
+		"/Users/apple/Desktop/Spring-2015/AI/AI-1/nonOpt.cpp",
+		"/Users/apple/Desktop/Spring-2015/AI/aima.cpp",
+		"/Users/apple/Desktop/jsw_rbtree/jsw_rbtree.c",
+		"/Users/apple/Desktop/jsw_rbtree/jsw_rbtree.h",
+		"/Users/apple/Desktop/Spring-2015/AI/aima.py",
+		"/Users/apple/Desktop/Spring-2015/AI/search.cpp",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/C++.sublime-settings",
+		"/Users/apple/Desktop/BST.py",
+		"/Users/apple/Desktop/WinterBreak-2014/Python/lecture-3/interpreter.py",
+		"/Users/apple/Desktop/WinterBreak-2014/Python/lecture-3/compilerMatch.py",
+		"/Users/apple/Desktop/WinterBreak-2014/Python/lecture-3/searchAndmatch.py",
+		"/Users/apple/Desktop/WinterBreak-2014/Algorithms/Graphs/FordFulkerson.java",
+		"/Users/apple/Desktop/WinterBreak-2014/Algorithms/Graphs/Assignment1.java",
+		"/Users/apple/Desktop/WinterBreak-2014/Algorithms/Graphs/Assignment2.java",
+		"/Users/apple/Desktop/WinterBreak-2014/Algorithms/Graphs/Assignment-3.java",
+		"/Users/apple/Desktop/WinterBreak-2014/Algorithms/Graphs/graphUtils.java",
+		"/Users/apple/Desktop/WinterBreak-2014/Python/poker.py",
+		"/Users/apple/Desktop/WinterBreak-2014/Python/crypt.py",
+		"/Users/apple/Desktop/hashTable.cpp",
+		"/Users/apple/Desktop/sorting.java",
+		"/Users/apple/Desktop/21:11:14",
+		"/Users/apple/Desktop/codingStuff/CODECHEF/PRACTICE/SPOJ_BABTWR.cpp",
+		"/Users/apple/Desktop/codingStuff/CODECHEF/PRACTICE/SPOJchMaze.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/sgmttree.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/SegTree.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/src_algs1/Prims_MST.cpp",
+		"/Users/apple/Desktop/codingStuff/COL106/Assignment-5/A5-files/PriorityQueueSTL.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/Graph1.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/TransitiveClosure.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/djikstra.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/bford.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/BipartiteDFS.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/circuits.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test9.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test8.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test7.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/BFord.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test4.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test1.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test3.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/TC_DP_Div2.cpp",
+		"/Users/apple/Desktop/codingStuff/TESTS/test2.cpp",
+		"/Users/apple/Desktop/codingStuff/test1.cpp",
+		"/Users/apple/Desktop/codingStuff/Algorithms part-I/Assignment-3/src/Solver.java",
+		"/Users/apple/Desktop/codingStuff/PL_UW/Exp.sml",
+		"/Users/apple/Desktop/codingStuff/PL_UW/blah.ml",
+		"/Users/apple/Desktop/codingStuff/COL106/Assignment-4/Assignment4.cpp",
+		"/Users/apple/Desktop/codingStuff/PL_UW/A1.sml",
+		"/Users/apple/Desktop/codingStuff/PL_UW/list.sml",
+		"/Users/apple/Desktop/codingStuff/PL_UW/DFS.sml",
+		"/Users/apple/Desktop/codingStuff/PL_UW/hello.sml",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/SML.sublime-build",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/GrahamScan.cpp",
+		"/Users/apple/Desktop/codingStuff/COL106/Assignment-3/Assignment3.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/RabinKarp.cpp",
+		"/Users/apple/Desktop/codingStuff/COL106/Assignment-4/file.txt",
+		"/Users/apple/Desktop/codingStuff/ICPC/SPOJ/numInv.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/BFS.cpp",
+		"/Users/apple/Desktop/codingStuff/Comp/src/BIT.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/MinMaxHeap.cpp",
+		"/Users/apple/Desktop/codingStuff/ICPC/src/imageTraders.cpp",
+		"/Users/apple/Desktop/codingStuff/Comp/src/FoxLinguistTC.cpp",
+		"/Users/apple/Desktop/codingStuff/Comp/src/RMQ.cpp",
+		"/Users/apple/Desktop/codingStuff/Comp/src/DP_TC2.cpp",
+		"/Users/apple/Desktop/codingStuff/Comp/src/Djikstra:KiloMax.cpp",
+		"/Users/apple/Desktop/codingStuff/Algorithms part-I/Hashing/src/hashStuff/SequentialSearchST.java",
+		"/Users/apple/Desktop/codingStuff/Algorithms part-I/Hashing/src/hashStuff/SeparateChainingHashST.java",
+		"/Users/apple/Desktop/COL106/A2-files/Maze.h",
+		"/Users/apple/Desktop/COL106/A2-files/Point.cpp",
+		"/Users/apple/Desktop/COL106/A2-files/misc.h",
+		"/Users/apple/Desktop/COL106/A2-files/misc.cpp",
+		"/Users/apple/Desktop/COL106/A2-files/Point.h",
+		"/Users/apple/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Users/apple/Desktop/C++dev/Div1Prob.cpp",
+		"/Users/apple/Desktop/C++dev/Palindromes.cpp",
+		"/Users/apple/Desktop/C++dev/Algoritms_STL.cpp",
+		"/Users/apple/Desktop/COL106/Const_nuances.cpp",
+		"/Users/apple/Desktop/C++dev/Palindromes",
+		"/Users/apple/Desktop/COL106/Queue",
+		"/Users/apple/Desktop/COL106/untitled",
+		"/Users/apple/Desktop/C++dev/helloworld12.cpp",
+		"/Users/apple/Desktop/C++dev/world-capitals",
+		"/Users/apple/Desktop/C++dev/helloworld11"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"dequeue",
+			"top",
+			"enqueue",
+			"removeEdge",
+			"isgreaterthan",
+			"right",
+			"left_rotate",
+			"CHAT",
+			"readCommandFromServer()",
+			"writeCommand(fileName)",
+			"c.",
+			"Client",
+			"& ",
+			" ,",
+			"c",
+			"'\\0'",
+			"writeCommand",
+			"proxy",
+			"if",
+			"if(NULL == (dp = opendir(argv[1])) )",
+			"poll",
+			"f<<",
+			"ReceiveData",
+			"fstream",
+			"bytesread",
+			"rv",
+			"strcpy",
+			"write",
+			"filename",
+			"opt",
+			";\n",
+			"rv",
+			"scanf",
+			"poll",
+			"file.open",
+			"scanf",
+			"&,",
+			"u",
+			"socket",
+			"newsockfd",
+			");\n",
+			"argv",
+			"#include\"stdio.h\"  \n#include\"stdlib.h\"  \n#include\"sys/types.h\"  \n#include\"sys/socket.h\"  \n#include\"string.h\"  \n#include\"netinet/in.h\"  \n  \n#define PORT 4444  \n#define BUF_SIZE 2000  \n#define CLADDR_LEN 100  \n  \nvoid main() {  \n struct sockaddr_in addr, cl_addr;  \n int sockfd, len, ret, newsockfd;  \n char buffer[BUF_SIZE];  \n pid_t childpid;  \n char clientAddr[CLADDR_LEN];  \n   \n sockfd = socket(AF_INET, SOCK_STREAM, 0);  \n if (sockfd < 0) {  \n  printf(\"Error creating socket!\\n\");  \n  exit(1);  \n }  \n printf(\"Socket created...\\n\");  \n   \n memset(&addr, 0, sizeof(addr));  \n addr.sin_family = AF_INET;  \n addr.sin_addr.s_addr = INADDR_ANY;  \n addr.sin_port = PORT;  \n   \n ret = bind(sockfd, (struct sockaddr *) &addr, sizeof(addr));  \n if (ret < 0) {  \n  printf(\"Error binding!\\n\");  \n  exit(1);  \n }  \n printf(\"Binding done...\\n\");  \n  \n printf(\"Waiting for a connection...\\n\");  \n listen(sockfd, 5);  \n  \n for (;;) { //infinite loop  \n  len = sizeof(cl_addr);  \n  newsockfd = accept(sockfd, (struct sockaddr *) &cl_addr, &len);  \n  if (newsockfd < 0) {  \n   printf(\"Error accepting connection!\\n\");  \n   exit(1);  \n  }  \n  printf(\"Connection accepted...\\n\");  \n  \n  inet_ntop(AF_INET, &(cl_addr.sin_addr), clientAddr, CLADDR_LEN);  \n  if ((childpid = fork()) == 0) { //creating a child process  \n  \n   close(sockfd);   \n//stop listening for new connections by the main process.   \n//the child will continue to listen.   \n//the main process now handles the connected client.  \n  \n   for (;;) {  \n    memset(buffer, 0, BUF_SIZE);  \n    ret = recvfrom(newsockfd, buffer, BUF_SIZE, 0, (struct sockaddr *) &cl_addr, &len);  \n    if(ret < 0) {  \n     printf(\"Error receiving data!\\n\");    \n     exit(1);  \n    }  \n    printf(\"Received data from %s: %s\\n\", clientAddr, buffer);   \n  \n    ret = sendto(newsockfd, buffer, BUF_SIZE, 0, (struct sockaddr *) &cl_addr, len);     \n    if (ret < 0) {    \n     printf(\"Error sending data!\\n\");    \n     exit(1);    \n    }    \n    printf(\"Sent data to %s: %s\\n\", clientAddr, buffer);  \n   }  \n  }  \n  close(newsockfd);  \n }  \n} ",
+			"in_",
+			"#",
+			" vector",
+			"reMove",
+			"move",
+			"initialize",
+			"makeMove",
+			"bestMove",
+			"int",
+			"itertools",
+			"PacmanRules",
+			"findSet",
+			"main",
+			"& ",
+			";\n"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"pop",
+			"front",
+			"push",
+			"szLeft",
+			"DELIMITER",
+			"int",
+			"Move",
+			"compress"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Game.cpp",
+					"settings":
+					{
+						"buffer_size": 5550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1063,
+								1063
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "AIEngine.h",
+					"settings":
+					{
+						"buffer_size": 1507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Game.h",
+					"settings":
+					{
+						"buffer_size": 2246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Square.h",
+					"settings":
+					{
+						"buffer_size": 1795,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 544.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Wall.h",
+					"settings":
+					{
+						"buffer_size": 1230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 148.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/apple/Desktop/Spring-2015/AI/AI-1/nonOpt.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/apple/Desktop/codingStuff/COL106/Assignment4.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 166.0,
+	"status_bar_visible": true
+}

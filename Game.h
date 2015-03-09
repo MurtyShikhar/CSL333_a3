@@ -32,13 +32,6 @@ private:
 
 	void removeEdge(Square a, Square b);
 
-	int currentPlayerWalls(){
-		if (!currentPlayer()) return numWallsA;
-		return numWallsB;
-	}
-
-
-
 	bool isValidWallPlacement(Wall wall);
 
 public:
@@ -83,7 +76,22 @@ public:
 		if (!currentPlayer()) return shortestPathtorow(player1, 0);
 		else return shortestPathtorow(player2, 8);
 	}
+	
+	stack<Square> otherShortestPathtoWin(){
+		if (currentPlayer()) return shortestPathtorow(player1, 0);
+		else return shortestPathtorow(player2, 8);
+	}
 
+
+	int currentPlayerWalls(){
+		if (!currentPlayer()) return numWallsA;
+		return numWallsB;
+	}
+	
+	int otherPlayerWalls(){
+		if (!currentPlayer()) return numWallsA;
+		return numWallsB;
+	}
 
 	// need a way to handle jumps..
 	// just a simple BFS

@@ -4,12 +4,60 @@
 		"selected_items":
 		[
 			[
-				"fi",
-				"first"
+				"player",
+				"player2"
+			],
+			[
+				"wA",
+				"Walls"
+			],
+			[
+				"gap",
+				"gapsinCurrCol"
+			],
+			[
+				"board",
+				"boardGraph"
+			],
+			[
+				"ga",
+				"gaps"
+			],
+			[
+				"curr",
+				"currSquare"
+			],
+			[
+				"find",
+				"findGapsIncols"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"boar",
+				"boardGraph"
 			],
 			[
 				"cur",
-				"curr"
+				"currSquare"
+			],
+			[
+				"boa",
+				"boardGraph"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"pla",
+				"player"
+			],
+			[
+				"fi",
+				"first"
 			],
 			[
 				"beg",
@@ -42,10 +90,6 @@
 			[
 				"cu",
 				"currentPlayer"
-			],
-			[
-				"pla",
-				"player1"
 			],
 			[
 				"ma",
@@ -102,10 +146,6 @@
 			[
 				"wll",
 				"walls"
-			],
-			[
-				"co",
-				"coords"
 			],
 			[
 				"o",
@@ -474,72 +514,41 @@
 			[
 				"seq",
 				"sequences"
-			],
-			[
-				"make",
-				"makeMove"
-			],
-			[
-				"da",
-				"dashCoordinates"
-			],
-			[
-				"ds",
-				"dashCoordinates"
-			],
-			[
-				"curr",
-				"currentMoves"
-			],
-			[
-				"delet",
-				"deletePreviousmoves"
-			],
-			[
-				"de",
-				"deltaColumn"
-			],
-			[
-				"delta",
-				"deltaChange"
-			],
-			[
-				"rand",
-				"random_device"
-			],
-			[
-				"ran",
-				"random_device"
-			],
-			[
-				"dash",
-				"dashCoordinates"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"contents": "#include \"Game.h\"\n\n\nstack<Square> GameState::shortestPathtorow(Square src, int row){\n	stack<Square> path;\n	queue<Square> q;\n	unordered_map<Square, Square, SquareHasher> parentNode; // explored nodes\n	parentNode[src] = Square(-1,-1);\n	q.push(src);\n	typedef set<Square>::iterator itr;\n\n	while (!q.empty()) {\n		Square t = q.front(); q.pop();\n		if (t.row == row){\n			while (t != src){\n				path.push(t);\n				t = parentNode[t];\n			}\n			return path;\n		}\n		set<Square> s = boardGraph[t];\n		for (itr i = s.begin(); i != s.end(); i++){\n			if (parentNode.find(*i) == parentNode.end()) // if not yet explored, explore\n			{\n				parentNode[*i] = t;\n				q.push(*i); // push it in the queue once explored\n			}\n		}\n\n	}\n\n	return path;\n}\n\nGameState GameState::action(move m)\n{\n	int vertical = (m.first == 'V'); // vertical is 1, if vertical is 0, then prolly horizontal is 0 \n	int horizontal = !(m.first == 'H'); // horizontal is 0, if 1 then wall is not horizontal\n	\n	GameState g = *this;\n	if (!vertical && horizontal){\n		int xCoord = m.second.first;\n		int yCoord = m.second.second;\n		g.traverse(Square(xCoord, yCoord));\n		g.turn = !turn;\n		pair<int,int> j = jumpPossible(player1, player2);\n		if(j.first){\n			if (j.first == 1){\n				Square pos = g.otherPlayerPosition();\n				int allow = pos.col + j.second <= 7 && pos.col + j.second >= 0;\n				if (!allow) return g;\n				g.addEdge(g.currentPlayerPosition(), Square(pos.row, pos.col + j.second) );\n\n				// remove this edge afterwards\n			}\n			if (j.first == -1) {\n				Square pos = g.otherPlayerPosition();\n				int allow = pos.row + j.second <= 7 && pos.row + j.second >= 0;\n				if (!allow) return g;\n				g.addEdge(g.currentPlayerPosition(), Square(pos.row + j.second, pos.col));\n\n			}\n		}\n		return g;\n	}\n\n	int xCoord = m.second.first;\n	int yCoord = m.second.second;\n	Wall w(vertical || horizontal, xCoord, yCoord);\n	g.placeWall(w);\n	return g;\n}\n\nset<move> GameState::validMoves()\n{\n	set<move> moves;\n	set<Wall> walls;\n	int wallsRemaining = (turn? numWallsA : numWallsB);\n	if (currentPlayerPosition().row < 9)\n		moves.insert(make_pair('T', make_pair(currentPlayerPosition().row+1,currentPlayerPosition().col) ));\n	if (currentPlayerPosition().col < 9)\n		moves.insert(make_pair('T', make_pair(currentPlayerPosition().row, currentPlayerPosition().col +1)));\n\n	if (currentPlayerPosition().col > 0)\n		moves.insert(make_pair('T', make_pair(currentPlayerPosition().row, currentPlayerPosition().col -1)));\n	if (!wallsRemaining){ return moves;}\n	for (int i = 0; i < wallsRemaining; wallsRemaining++)\n	{\n		for (int j = 0; j < 8; i++)\n			for (int k =0; k < 8; k++){\n				Wall w1(0, j,k); Wall w2(1, j,k); \n				if (walls.find(w1) == walls.end()) moves.insert(make_pair('H', make_pair(j,k) ) ); \n				if (walls.find(w2) == walls.end()) moves.insert(make_pair('V', make_pair(j,k) ) );\n			}\n	}\n\n	return moves;\n\n\n}\n\nvoid GameState::placeWall(Wall wall)\n{\n	int xCoord =wall.coords.first;\n	int yCoord = wall.coords.second;\n	if (!isValidWallPlacement(wall)) return;\n	if (!currentPlayer()) numWallsA--;\n	else numWallsB--;\n	walls.insert(wall);\n	if (wall.orientation == VERTICAL)\n	{\n		removeEdge(Square(xCoord, yCoord), Square(xCoord +1, yCoord));\n		removeEdge(Square(xCoord, yCoord+1), Square(xCoord+1, yCoord +1));\n	}	\n\n	else{\n		removeEdge(Square(xCoord, yCoord), Square(xCoord, yCoord +1));\n		removeEdge(Square(xCoord+1, yCoord), Square(xCoord+1, yCoord+1));\n	}\n}\n\n// assume that the wall coordinates are correct i.e. between 0 and 7\nbool GameState::isValidWallPlacement(Wall wall){\n	int xCoord =wall.coords.first;\n	int yCoord = wall.coords.second;\n	if (currentPlayerWalls() == 0) return false;\n	\n	if (walls.find(wall) != walls.end()) // check if wall is already present\n		return false;\n	if (wall.orientation == VERTICAL)\n	{\n		Wall crossingNeigbor1(HORIZONTAL, xCoord, yCoord); // intersection with a horizontal wall\n		Wall crossingNeigbor2(VERTICAL, xCoord,yCoord +1); // intersection with a vertical wall one row above\n		Wall crossingNeigbor3(VERTICAL, xCoord, yCoord -1);	// intersection with a vertical wall one row below\n		if (walls.find(crossingNeigbor1) != walls.end() || walls.find(crossingNeigbor2) != walls.end() || walls.find(crossingNeigbor3) != walls.end())\n			return false;\n		// if wall doesn't intersect, update the boardGraph as follows\n\n		removeEdge(Square(xCoord, yCoord), Square(xCoord+1, yCoord)); \n		removeEdge(Square(xCoord, yCoord+1), Square(xCoord+1, yCoord +1));\n\n		bool hasPath = hasPathtoGoal();\n\n		// add the edges back\n		addEdge(Square(xCoord, yCoord), Square(xCoord+1, yCoord));\n		addEdge(Square(xCoord, yCoord+1), Square(xCoord+1, yCoord +1));\n		if (!hasPath)\n			return false;\n\n\n	}\n\n	if (wall.orientation == HORIZONTAL)\n	{\n		Wall crossingNeigbor1(VERTICAL, xCoord , yCoord);  // intersection with a vertical wall\n		Wall crossingNeigbor2(HORIZONTAL, xCoord +1, yCoord);	// intersection with a horizontal wall one column to the right\n		Wall crossingNeigbor3(HORIZONTAL, xCoord -1, yCoord); // intersection with a horizontal wall one column to the left\n		if (walls.find(crossingNeigbor1) != walls.end() || walls.find(crossingNeigbor2) != walls.end() || walls.find(crossingNeigbor3) != walls.end())\n			return false;\n		// if wall doesn't intersect, update the boardGraph as follows\n\n		removeEdge(Square(xCoord, yCoord), Square(xCoord, yCoord +1));\n		removeEdge(Square(xCoord+1, yCoord), Square(xCoord+1, yCoord+1));\n\n		bool hasPath = hasPathtoGoal();\n		// add the edges back\n		addEdge(Square(xCoord, yCoord), Square(xCoord, yCoord +1));\n		addEdge(Square(xCoord+1, yCoord), Square(xCoord+1, yCoord+1));\n		if (!hasPath)\n			return false;\n	}\n\n	return true;\n\n}",
 			"file": "Game.cpp",
+			"file_size": 5550,
+			"file_write_time": 1425905191000000,
 			"settings":
 			{
-				"buffer_size": 5550,
+				"buffer_size": 5586,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "#include <vector>\n#include <iostream>\n#include <Game.h>\n\n\nusing namespace std;\n\n\n// minimax\ntemplate <typename EVAL>\nclass AIEngine{\n\nprivate:\n	EVAL eval;\n	// int alpha;\n	// int beta	\n	Square myPlayer;\n\npublic:\n	// 0 if player 1, 1 if player 2\n	AIEngine(EVAL eval, int player): eval(eval){ \n		if (player == 0) myPlayer = Square(\"e1\");\n		else myPlayer = Square(\"e9\");\n	}\n\n	move minimax(GameState& curr,int depth)\n	{\n		move curr = make_pair('X', make_pair(1,2));\n		pair<int, move> m = make_pair(-(1<<31), curr);\n\n		set<move> validMoves = gs.validMoves();\n		typedef set<move>::iterator it;\n\n		for (it = moves.begin(); it != moves.end(); it++)\n		{\n			GameState nxt = gs.action(*it);\n			m = max(make_pair(Min(nxt, depth), *it), m);\n		}\n\n		return m.first;\n	}\n\n\n	double Max(GameState& gs,int depth, )\n	{\n		if (gs.terminal() || depth == 0) return eval(gs, player);\n		set<move> moves = gs.validMoves();\n		typedef set<move>::iterator it;\n		GameState nxt;\n		int best = -(1<< 31);\n		for (it = moves.begin(); it != moves.end(); it++)\n		{\n			nxt = gs.action(*it);\n			best = max(best, Min(nxt, depth-1));\n			// if (best > beta)\n			// 	return best;\n			// alpha = max(alpha, best);\n\n		}\n		return best;\n\n\n	}\n\n\n	double Min(GameState& gs, int depth)\n	{\n		if (gs.terminal() || depth == 0) return eval(gs, player);\n		set<move> moves = gs.validMoves();\n		typedef set<move>::iterator it;\n		GameState nxt;\n		int best = (1<< 31);\n		for (it = moves.begin(); it != moves.end(); it++)\n		{\n			nxt = gs.action(*it);\n			best = min(best, Max(nxt, depth -1));\n			// if (best < alpha)\n			// 	return best;\n			// beta = min(best, alpha);\n\n		}\n		return best;\n	}\n\n}",
 			"file": "AIEngine.h",
+			"file_size": 1507,
+			"file_write_time": 1425905185000000,
 			"settings":
 			{
-				"buffer_size": 1507,
+				"buffer_size": 1626,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "#include <vector>\n#include <set>\n#include <unordered_map>\n#include <stack>\n#include <queue>\n#include <cassert>\n#include <string>\n#include <utility>\n#include \"Square.h\"\n#include \"Wall.h\"\n\nusing namespace std;\n\n\ntypedef pair<char, pair<int, int> >   move;\n\ntypedef unordered_map<Square ,set<Square> , SquareHasher> Graph;\n\nclass GameState{\nprivate:\n	static const int BOARD_SIZE = 9;\n	int numWallsA, numWallsB; \n	Square player1, player2;\n	int turn;\n	set<Wall> walls; // on the board\n\n	void addEdge(Square a, Square b){\n		boardGraph[a].insert(b);\n		boardGraph[b].insert(a); // edges are undirected\n	}\n\n	void removeEdge(Square a, Square b);\n\n	bool isValidWallPlacement(Wall wall);\n\npublic:\n	Graph boardGraph;\n	GameState(): player1(\"e1\"), player2(\"e9\"), numWallsA(10), numWallsB(10), turn(0){\n		for (int i = 0; i < BOARD_SIZE; i++){\n\n			for (int j = 0; j < BOARD_SIZE; j++){\n				set<Square> adj;\n				for (int d = -1; d < 2; d++){\n					if (d != 0) {\n						if (i+d >= 0 && i+d < BOARD_SIZE)\n							adj.insert(Square(i+d, j));\n						if (j+d >= 0 && j+d < BOARD_SIZE)\n							adj.insert(Square(i, j+d));\n					}\n				}\n				boardGraph.insert(make_pair(Square(i,j), adj) );\n			}\n		}\n	}\n	// add squares a and b to each other's adjacency lists\n\n	set<move> validMoves();\n	GameState action(move);\n\n	int currentPlayer(){ return turn; }  // 0 if player 1, 1 if player 2\n	int otherPlayer() {return !turn;}\n	int otherPlayerPosition() {return currentPlayer() == 0? player2: player1;}\n	\n	Square currentPlayerPosition(){ return currentPlayer() == 0 ? player1: player2; }\n	\n	bool terminal() { return player1.row == 8 || player2.row == 0; }  // test for terminal state\n\n	\n	bool hasPathtoGoal(){\n		return (!shortestPathtorow(player1, 0).empty() && !shortestPathtorow(player2, 8).empty());\n	}\n	\n	void placeWall(Wall wall);\n\n	stack<Square> shortestPathtoWin(){\n		if (!currentPlayer()) return shortestPathtorow(player1, 0);\n		else return shortestPathtorow(player2, 8);\n	}\n	\n	stack<Square> otherShortestPathtoWin(){\n		if (currentPlayer()) return shortestPathtorow(player1, 0);\n		else return shortestPathtorow(player2, 8);\n	}\n\n\n	int currentPlayerWalls(){\n		if (!currentPlayer()) return numWallsA;\n		return numWallsB;\n	}\n	\n	int otherPlayerWalls(){\n		if (!currentPlayer()) return numWallsA;\n		return numWallsB;\n	}\n\n	// need a way to handle jumps..\n	// just a simple BFS\n	stack<Square> shortestPathtorow(Square src, int row);\n\n	void traverse(Square sq) {\n		if (currentPlayer() == 0) player1 = sq;\n		else player2 = sq;\n	}\n\n\n};",
 			"file": "Game.h",
+			"file_size": 2488,
+			"file_write_time": 1426065218000000,
 			"settings":
 			{
-				"buffer_size": 2246,
+				"buffer_size": 2488,
 				"line_ending": "Unix"
 			}
 		},
@@ -552,6 +561,14 @@
 			}
 		},
 		{
+			"file": "lightState.cpp",
+			"settings":
+			{
+				"buffer_size": 297,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"contents": "\n#include <vector>\n#include <set>\n#include <unordered_map>\n#include <stack>\n#include <queue>\n#include <cassert>\n#include <string>\n#include <utility>\n\nusing namespace std;\n\n\n#define VERTICAL 1\n#define HORIZONTAL 0\n\nstruct Wall{\n	int orientation;\n	\n\n	pair<int,int> coords;   // coordinates of the wall\n	/*\n		coords.first is the x coordinate of the wall, and coords.second is the y coordinate of the wall\n		for a horizontal wall the x coordinate ranges from 0 to 7 and the y coordinate ranges from 0 to 7\n		\n		for a horizontal wall to intersect with a vertical wall, their x and y coordinates need to be the same\n	*/\n	Wall(int a, int b,int c) {\n		coords = make_pair(b,c);\n		orientation = a;\n		\n	}\n	Wall(string a)\n	{\n		orientation = a[0] == 'V'? 1 : 0;\n		int xCoord = a[1] - 'a';\n		int yCoord = a[2] - '1';\n		assert (xCoord >= 0 && xCoord <= 7 && yCoord >= 0 && yCoord <= 7); // sanity check\n		coords = make_pair(xCoord, yCoord);\n	}\n\n	/* to support set insertion */\n	bool operator<(const Wall& that) const\n	{\n		if (coords != that.coords)\n			return coords < that.coords;\n		return orientation < that.orientation;\n	}\n\n	bool operator==(const Wall& that) const\n	{\n		return coords == that.coords && orientation == that.orientation;\n	}	\n	\n};",
 			"file": "Wall.h",
 			"file_size": 1229,
@@ -559,6 +576,28 @@
 			"settings":
 			{
 				"buffer_size": 1230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include \"Player.h\"\n\ntypedef double Feature;    //readability\n\nclass BasePlayer : public Player\n{\n\n\nprivate:\n\n	int findGapsIncols()\n	{\n		int gaps = 0;\n		for (int col = 0; col < 9; col++)\n		{\n			int gapsinCurrCol = 0;\n			int row = 0;\n			bool Walls = false;\n			while (row < 9)\n			{\n				Square currSquare(row,col);\n				bool curr = (gs.boardGraph[currSquare].find(Square(row,col+1)) != gs.boardGraph[currSquare].end() ); // gap found in this row,and this col\n				if(!curr)\n				{\n					Walls = true;\n				}\n				if (curr) {if (row == 0) gapsinCurrCol++; row++; continue;}\n				for (int j =row+1; j < 9; j++) // no gaps found till j-1\n				{\n					currSquare.row = j;\n					bool check = (gs.boardGraph[currSquare].find(Square(row,col+1)) != gs.boardGraph[currSquare].end() );\n					if (check != curr)\n					{\n						gapsinCurrCol++;\n						row = j+1; \n						break;\n					}\n				}\n			}\n\n			if(Walls)\n				gaps += gapsinCurrCol;\n		}\n\n\n		return gaps;\n	}\n\n	int findGapsInrows()\n	{\n		int gaps = 0;\n		for (int row = 0; row < 9; row++)\n		{\n			int gapsinCurrRow = 0;\n			int col = 0;\n			bool Walls = false;\n			while (col < 9)\n			{\n				Square currSquare(row,col);\n				bool curr = (gs.boardGraph[currSquare].find(Square(row+1, col)) != gs.boardGraph[currSquare].end() );\n				if (!curr) Walls = true;\n				if (curr) {if (col == 0) gapsinCurrRow++; col++; continue;}\n			\n				for (int j = col+1; j < 9; j++)\n				{\n					currSquare.col = j;\n					bool check = (gs.boardGraph[currSquare].find(Square(row+1, j)) != gs.boardGraph[currSquare].end() );\n					if (check != curr)\n					{	\n					\n						gapsinCurrRow++;\n						col = j +1;\n						break;\n					}\n				}\n\n				\n\n			}\n			\n			if (Walls)\n				gaps+= gapsinCurrRow;\n		}\n\n		return gaps;\n		\n	}\n\n	int gapCount(GameState& gs){\n\n		int gaps = 0;\n		gaps += findGapsInrow();\n		gaps += findGapsIncols(); \n		return gaps;\n	}\n\n\n	double pathCount(GameState& gs)\n	{\n		int gaps = gapCount(gs);\n\n	}\n\n\npublic:\n	double operator()(GameState& gs, Square& myPlayer)\n	{\n		double eval;\n\n		Feature wallsLeft, shortestDistToGoal;\n		shortestDistToGoal = gs.shortestPathToWin() - gs.otherShortestPathToWin();\n		wallsLeft = gs.currentPlayerWalls() - gs.otherPlayerWalls();\n		if(myPlayer != gs.currentPlayer())\n		{\n			shortestDistToGoal = -shortestDistToGoal;\n			eval += shortestDistToGoal;                    //this will be weighted\n			wallsLeft = -wallsLeft;\n			eval += shortestDistToGoal;                    //this will be weighted\n		}\n		return eval;\n	}\n};",
+			"file": "Player.cpp",
+			"file_size": 2365,
+			"file_write_time": 1426069864000000,
+			"settings":
+			{
+				"buffer_size": 2435,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include <iostream>\n#include <vector>\n#include <set>\n#include \"Game.h\"\n\nusing namespace std;\n\nclass Player {\npublic:\n	virtual double operator()(GameState& gs, int myPlayer) = 0;   //need to know if my player is player 1 or player 2\n};",
+			"file": "Player.h",
+			"file_size": 238,
+			"file_write_time": 1426065218000000,
+			"settings":
+			{
+				"buffer_size": 234,
 				"line_ending": "Unix"
 			}
 		}
@@ -878,7 +917,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -889,6 +928,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"myPlayer",
 			"dequeue",
 			"top",
 			"enqueue",
@@ -980,20 +1020,20 @@
 					"file": "Game.cpp",
 					"settings":
 					{
-						"buffer_size": 5550,
+						"buffer_size": 5586,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1063,
-								1063
+								1461,
+								1461
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1007,23 +1047,24 @@
 					"file": "AIEngine.h",
 					"settings":
 					{
-						"buffer_size": 1507,
+						"buffer_size": 1626,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								80,
-								80
+								315,
+								315
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++ Starting Kit/C.tmLanguage"
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 26.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1033,15 +1074,15 @@
 					"file": "Game.h",
 					"settings":
 					{
-						"buffer_size": 2246,
+						"buffer_size": 2488,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								499,
-								499
+								684,
+								684
 							]
 						],
 						"settings":
@@ -1067,23 +1108,50 @@
 						"selection":
 						[
 							[
-								442,
-								442
+								17,
+								17
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 544.0,
+						"translation.y": 35.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "lightState.cpp",
+					"settings":
+					{
+						"buffer_size": 297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++ Starting Kit/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "Wall.h",
 					"settings":
 					{
@@ -1100,8 +1168,61 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++ Starting Kit/C.tmLanguage",
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 91.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Player.cpp",
+					"settings":
+					{
+						"buffer_size": 2435,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Player.h",
+					"settings":
+					{
+						"buffer_size": 234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								162
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
